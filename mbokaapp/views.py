@@ -302,6 +302,30 @@ def job_bookmark_view(request, id):
 
 
 
+@login_required(login_url=reverse_lazy('accounts:login'))
+@user_is_employer
+def job_edit_view(request, id=id):
+
+    job = get_object_or_404(Job, id=id)
+    categories = Category.objects.all()
+    form = JobEditForm(request.POST or None, instance=job)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        # for save tags
+        # form.save_m2m()
+        messages.success(request, 'Your Job Post Was Successfully Updated!')
+        return redirect(reverse("mbokaapp:single-job", kwargs={
+            'id': instance.id
+        }))
+    context = {
+
+        'form': form,
+        'categories': categories
+    }
+
+    return render(request, 'mbokaapp/job-edit.html', context)
+
 
 
 
