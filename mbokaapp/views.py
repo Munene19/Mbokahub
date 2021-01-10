@@ -8,9 +8,9 @@ from django.urls import reverse, reverse_lazy
 from django.http import Http404, HttpResponseRedirect
 
 from account.models import User
-from jobapp.forms import *
-from jobapp.models import *
-from jobapp.permission import *
+from mbokaapp.forms import *
+from mbokaapp.models import *
+from mbokaapp.permission import *
 User = get_user_model()
 
 
