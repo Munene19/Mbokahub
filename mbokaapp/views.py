@@ -296,7 +296,7 @@ def job_bookmark_view(request, id):
     else:
         messages.error(request, 'You already saved this Job!')
 
-        return (reverse("mbokaapp:single-job", kwargs={
+        return redirect(reverse("mbokaapp:single-job", kwargs={
             'id': id
         }))
 
