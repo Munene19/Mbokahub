@@ -77,3 +77,20 @@ def create_job_View(request):
         'categories': categories
     }
     return render(request, 'mbokaapp/post-job.html', context)
+
+def single_job_view(request, id):
+
+    job = get_object_or_404(Job, id=id)
+    related_job_list = job.tags.similar_objects()
+
+    paginator = Paginator(related_job_list, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'job': job,
+        'page_obj': page_obj,
+        'total': len(related_job_list)
+
+    }
+    return render(request, 'mbokaapp/job-single.html', context)
