@@ -145,4 +145,70 @@ def search_result_view(request):
     }
     return render(request, 'mbokaapp/result.html', context)
 
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employee
+def apply_job_view(request, id):
+
+    form = JobApplyForm(request.POST or None)
+
+    user = get_object_or_404(User, id=request.user.id)
+    applicant = Applicant.objects.filter(user=user, job=id)
+
+    if not applicant:
+        if request.method == 'POST':
+
+            if form.is_valid():
+                instance = form.save(commit=False)
+                instance.user = user
+                instance.save()
+
+                messages.success(
+                    request, 'You have successfully applied for this job!')
+                return redirect(reverse("mbokaapp:single-job", kwargs={
+                    'id': id
+                }))
+
+        else:
+            return redirect(reverse("mbokaapp:single-job", kwargs={
+                'id': id
+            }))
+
+    else:
+
+        messages.error(request, 'You already applied for the Job!')
+
+        return redirect(reverse("mbokaapp:single-job", kwargs={
+            'id': id
+        }))
+
+
+@login_required(login_url=reverse_lazy('account:login'))
+# @user_is_employer
+# @user_is_employee
+def dashboard_view(request):
+
+    jobs = []
+    savedjobs = []
+    total_applicants = {}
+    if request.user.role == 'employer':
+
+        jobs = Job.objects.filter(user=request.user.id)
+        for job in jobs:
+            count = Applicant.objects.filter(job=job.id).count()
+            total_applicants[job.id] = count
+
+    if request.user.role == 'employee':
+        savedjobs = BookmarkJob.objects.filter(user=request.user.id)
+    context = {
+
+        'jobs': jobs,
+        'savedjobs': savedjobs,
+        'total_applicants': total_applicants
+    }
+
+    print(context)
+    return render(request, 'mbokaapp/dashboard.html', context)
+
+
+
 
