@@ -5,11 +5,11 @@ from account.managers import CustomUserManager
 
 # Create your models here.
 
-# JOB_TYPE = (
-#     ('M', "Male"),
-#     ('F', "Female"),
+JOB_TYPE = (
+    ('M', "Male"),
+    ('F', "Female"),
 
-# )
+)
 
 ROLE = (
     ('employer', "Employer"),

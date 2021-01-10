@@ -62,3 +62,54 @@ class EmployeeRegistrationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+
+class EmployerRegistrationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        UserCreationForm.__init__(self, *args, **kwargs)
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+        self.fields['first_name'].label = "Company Name"
+        self.fields['last_name'].label = "Company Address"
+        self.fields['password1'].label = "Password"
+        self.fields['password2'].label = "Confirm Password"
+
+        self.fields['first_name'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Company Name',
+            }
+        )
+        self.fields['last_name'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Company Address',
+            }
+        )
+        self.fields['email'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Email',
+            }
+        )
+        self.fields['password1'].widget.attrs.update(
+            {
+                'placeholder': 'Enter Password',
+            }
+        )
+        self.fields['password2'].widget.attrs.update(
+            {
+                'placeholder': 'Confirm Password',
+            }
+        )
+    class Meta:
+
+        model=User
+
+        fields = ['first_name', 'last_name', 'email', 'password1', 'password2',]
+
+
+    def save(self, commit=True):
+        user = UserCreationForm.save(self,commit=False)
+        user.role = "employer"
+        if commit:
+            user.save()
+        return user
