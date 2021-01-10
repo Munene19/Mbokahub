@@ -265,6 +265,42 @@ def applicant_details_view(request, id):
 
     return render(request, 'mbokaapp/applicant-details.html', context)
 
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employee
+def job_bookmark_view(request, id):
+
+    form = JobBookmarkForm(request.POST or None)
+
+    user = get_object_or_404(User, id=request.user.id)
+    applicant = BookmarkJob.objects.filter(user=request.user.id, job=id)
+
+    if not applicant:
+        if request.method == 'POST':
+
+            if form.is_valid():
+                instance = form.save(commit=Fasle)
+                instance.user = user
+                instance.save()
+
+                messages.success(
+                    request, 'You have successfully save this job!')
+                return redirect(reverse("mbokaapp:single-job", kwargs={
+                    'id': id
+                }))
+
+        else:
+            return redirect(reverse("mbokaapp:single-job", kwargs={
+                'id': id
+            }))
+
+    else:
+        messages.error(request, 'You already saved this Job!')
+
+        return (reverse("mbokaapp:single-job", kwargs={
+            'id': id
+        }))
+
+
 
 
 
