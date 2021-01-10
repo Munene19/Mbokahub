@@ -13,6 +13,12 @@ urlpatterns = [
     path('about/', views.single_job_view, name='about'),
     path('contact/', views.single_job_view, name='contact'),
     path('result/', views.search_result_view, name='search_result'),
+    path('dashboard/', views.dashboard_view, name='dashboard'),
+    path('dashboard/employer/job/<int:id>/applicants/', views.all_applicants_view, name='applicants'),
+    path('dashboard/employer/job/edit/<int:id>', views.job_edit_view, name='edit-job'),
+    path('dashboard/employer/applicant/<int:id>/', views.applicant_details_view, name='applicant-details'),
+    path('dashboard/employer/delete/<int:id>/', views.delete_job_view, name='delete'),
+    path('dashboard/employee/delete-bookmark/<int:id>/', views.delete_bookmark_view, name='delete-bookmark'),
 
 
 
