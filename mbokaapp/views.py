@@ -209,6 +209,19 @@ def dashboard_view(request):
     print(context)
     return render(request, 'mbokaapp/dashboard.html', context)
 
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employer
+def delete_job_view(request, id):
+
+    job = get_object_or_404(Job, id=id, user=request.user.id)
+
+    if job:
+
+        job.delete()
+        messages.success(request, 'Your Job Post was successfully deleted!')
+
+    return redirect('mbokaapp:dashboard')
+
 
 
 
