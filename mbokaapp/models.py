@@ -13,7 +13,6 @@ from taggit.managers import TaggableManager
 JOB_TYPE = (
     ('1', "Full time"),
     ('2', "Part time"),
-    ('3', "Internship"),
 )
 
 class Category(models.Model):
