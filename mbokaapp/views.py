@@ -278,7 +278,7 @@ def job_bookmark_view(request, id):
         if request.method == 'POST':
 
             if form.is_valid():
-                instance = form.save(commit=Fasle)
+                instance = form.save(commit=False)
                 instance.user = user
                 instance.save()
 
