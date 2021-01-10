@@ -163,6 +163,6 @@ class EmployeeProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ["first_name", "last_name", "gender"]
+        fields = [ "first_name", "last_name", "gender" ]
 
 
