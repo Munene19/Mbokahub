@@ -17,31 +17,25 @@ class JobForm(forms.ModelForm):
         self.fields['location'].label = "Job Location :"
         self.fields['salary'].label = "Salary :"
         self.fields['description'].label = "Job Description :"
-        self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Submission Deadline :"
         self.fields['company_name'].label = "Company Name :"
 
 
         self.fields['title'].widget.attrs.update(
             {
-                'placeholder': 'eg : Software Developer',
+                'placeholder': 'eg : Plumber',
             }
         )        
         self.fields['location'].widget.attrs.update(
             {
-                'placeholder': 'eg : Bangladesh',
+                'placeholder': 'eg : Kiambu',
             }
         )
         self.fields['salary'].widget.attrs.update(
             {
-                'placeholder': '$800 - $1200',
+                'placeholder': 'Kshs.7,000 - Kshs.13,000',
             }
-        )
-        self.fields['tags'].widget.attrs.update(
-            {
-                'placeholder': 'Use comma separated. eg: Python, JavaScript ',
-            }
-        )                        
+        )                     
         self.fields['last_date'].widget.attrs.update(
             {
                 'placeholder': 'YYYY-MM-DD ',
@@ -103,3 +97,89 @@ class JobBookmarkForm(forms.ModelForm):
         model = BookmarkJob
         fields = ['job']
 
+
+class JobEditForm(forms.ModelForm):
+    
+    def __init__(self, *args, **kwargs):
+        forms.ModelForm.__init__(self, *args, **kwargs)
+        self.fields['title'].label = "Job Title :"
+        self.fields['location'].label = "Job Location :"
+        self.fields['salary'].label = "Salary :"
+        self.fields['description'].label = "Job Description :"
+        # self.fields['tags'].label = "Tags :"
+        self.fields['last_date'].label = "Dead Line :"
+        self.fields['company_name'].label = "Company Name :"
+
+
+        self.fields['title'].widget.attrs.update(
+            {
+                'placeholder': 'eg : Electrician',
+            }
+        )        
+        self.fields['location'].widget.attrs.update(
+            {
+                'placeholder': 'eg : Nairobi',
+            }
+        )
+        self.fields['salary'].widget.attrs.update(
+            {
+                'placeholder': 'Kshs.10,000 - Kshs.15,000',
+            }
+        )
+        # self.fields['tags'].widget.attrs.update(
+        #     {
+        #         'placeholder': 'Use comma separated. eg: Python, JavaScript ',
+        #     }
+        # )                        
+        self.fields['last_date'].widget.attrs.update(
+            {
+                'placeholder': 'YYYY-MM-DD ',
+            }
+        )        
+        self.fields['company_name'].widget.attrs.update(
+            {
+                'placeholder': 'Company Name',
+            }
+        )           
+            
+
+    
+        last_date = forms.CharField(widget=forms.TextInput(attrs={
+                    'placeholder': 'Service Name',
+                    'class' : 'datetimepicker1'
+                }))
+
+    class Meta:
+        model = Job
+
+        fields = [
+            "title",
+            "location",
+            "job_type",
+            "category",
+            "salary",
+            "description",
+            "last_date",
+            "company_name",
+            ]
+
+    def clean_job_type(self):
+        job_type = self.cleaned_data.get('job_type')
+
+        if not job_type:
+            raise forms.ValidationError("Service is required")
+        return job_type
+
+    def clean_category(self):
+        category = self.cleaned_data.get('category')
+
+        if not category:
+            raise forms.ValidationError("category is required")
+        return category
+
+
+    def save(self, commit=True):
+        job = super(JobEditForm, self).save(commit=False)
+        if commit:
+            user.save()
+        return job
