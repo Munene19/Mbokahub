@@ -237,5 +237,36 @@ def all_applicants_view(request, id):
 
 
 
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employee
+def delete_bookmark_view(request, id):
+
+    job = get_object_or_404(BookmarkJob, id=id, user=request.user.id)
+
+    if job:
+
+        job.delete()
+        messages.success(request, 'Saved Job was successfully deleted!')
+
+    return redirect('mbokaapp:dashboard')
+
+
+
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employer
+def applicant_details_view(request, id):
+
+    applicant = get_object_or_404(User, id=id)
+
+    context = {
+
+        'applicant': applicant
+    }
+
+    return render(request, 'mbokaapp/applicant-details.html', context)
+
+
+
+
 
 
