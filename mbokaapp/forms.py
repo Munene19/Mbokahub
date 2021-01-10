@@ -98,3 +98,8 @@ class JobApplyForm(forms.ModelForm):
         model = Applicant
         fields = ['job']
 
+class JobBookmarkForm(forms.ModelForm):
+    class Meta:
+        model = BookmarkJob
+        fields = ['job']
+
