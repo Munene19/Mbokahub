@@ -60,7 +60,6 @@ class JobForm(forms.ModelForm):
             "category",
             "salary",
             "description",
-            "tags",
             "last_date",
             "company_name",
             ]
@@ -106,7 +105,6 @@ class JobEditForm(forms.ModelForm):
         self.fields['location'].label = "Job Location :"
         self.fields['salary'].label = "Salary :"
         self.fields['description'].label = "Job Description :"
-        # self.fields['tags'].label = "Tags :"
         self.fields['last_date'].label = "Dead Line :"
         self.fields['company_name'].label = "Company Name :"
 
@@ -126,11 +124,7 @@ class JobEditForm(forms.ModelForm):
                 'placeholder': 'Kshs.10,000 - Kshs.15,000',
             }
         )
-        # self.fields['tags'].widget.attrs.update(
-        #     {
-        #         'placeholder': 'Use comma separated. eg: Python, JavaScript ',
-        #     }
-        # )                        
+                       
         self.fields['last_date'].widget.attrs.update(
             {
                 'placeholder': 'YYYY-MM-DD ',
