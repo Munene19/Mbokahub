@@ -222,6 +222,20 @@ def delete_job_view(request, id):
 
     return redirect('mbokaapp:dashboard')
 
+@login_required(login_url=reverse_lazy('account:login'))
+@user_is_employer
+def all_applicants_view(request, id):
+
+    all_applicants = Applicant.objects.filter(job=id)
+
+    context = {
+
+        'all_applicants': all_applicants
+    }
+
+    return render(request, 'mbokaapp/all-applicants.html', context)
+
+
 
 
 
