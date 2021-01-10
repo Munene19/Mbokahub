@@ -92,3 +92,9 @@ class JobForm(forms.ModelForm):
             user.save()
         return job
 
+
+class JobApplyForm(forms.ModelForm):
+    class Meta:
+        model = Applicant
+        fields = ['job']
+
