@@ -10,6 +10,9 @@ urlpatterns = [
     path('job/<int:id>/', views.single_job_view, name='single-job'),
     path('apply-job/<int:id>/', views.apply_job_view, name='apply-job'),
     path('bookmark-job/<int:id>/', views.job_bookmark_view, name='bookmark-job'),
+    path('about/', views.single_job_view, name='about'),
+    path('contact/', views.single_job_view, name='contact'),
+    path('result/', views.search_result_view, name='search_result'),
 
 
 
