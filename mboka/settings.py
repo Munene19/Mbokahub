@@ -26,7 +26,7 @@ SECRET_KEY = ')jswvy%3t)00(rhk40uap^4qdaiew=2p#c%0b$ve9i0@%2x5al'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://mbokahub.herokuapp.com/]
 
 
 # Application definition
