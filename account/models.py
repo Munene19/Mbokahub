@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from account.managers import CustomUserManager
+from PIL import Image
 
 
 # Create your models here.
@@ -24,6 +25,9 @@ class User(AbstractUser):
                               })
     role = models.CharField(choices=ROLE,  max_length=10)
     gender = models.CharField(choices=JOB_TYPE, max_length=1)
+    area_of_specialization = models.CharField(max_length=300, blank=True)
+    bio = models.CharField(max_length=300, blank=True)
+    location = models.CharField(max_length=300, blank=True)
 
 
     USERNAME_FIELD = "email"
@@ -35,3 +39,14 @@ class User(AbstractUser):
     def get_full_name(self):
         return self.first_name+ ' ' + self.last_name
     objects = CustomUserManager()
+
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    profile_pic_name = 'user_{0}/profile.jpg'.format(instance.user.id)
+    full_path = os.path.join(settings.MEDIA_ROOT, profile_pic_name)
+
+    if os.path.exists(full_path):
+    	os.remove(full_path)
+
+    return profile_pic_name
+

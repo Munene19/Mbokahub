@@ -19,6 +19,7 @@ class JobForm(forms.ModelForm):
         self.fields['description'].label = "Job Description :"
         self.fields['last_date'].label = "Submission Deadline :"
         self.fields['company_name'].label = "Company Name :"
+        self.fields['company_contact_information'].label = "Company Contact Information :"
 
 
         self.fields['title'].widget.attrs.update(
@@ -44,9 +45,14 @@ class JobForm(forms.ModelForm):
         )        
         self.fields['company_name'].widget.attrs.update(
             {
-                'placeholder': 'Company Name',
+                'placeholder': 'Company name',
             }
-        )           
+        ) 
+        self.fields['company_contact_information'].widget.attrs.update(
+            {
+                'placeholder': 'Company contact information',
+            }
+        )          
             
 
 
@@ -62,6 +68,7 @@ class JobForm(forms.ModelForm):
             "description",
             "last_date",
             "company_name",
+            "company_contact_information",
             ]
 
     def clean_job_type(self):
@@ -107,6 +114,7 @@ class JobEditForm(forms.ModelForm):
         self.fields['description'].label = "Job Description :"
         self.fields['last_date'].label = "Dead Line :"
         self.fields['company_name'].label = "Company Name :"
+        self.fields['company_contact_information'].label = "Company contact information :"
 
 
         self.fields['title'].widget.attrs.update(
@@ -134,7 +142,12 @@ class JobEditForm(forms.ModelForm):
             {
                 'placeholder': 'Company Name',
             }
-        )           
+        )
+        self.fields['company_contact_information'].widget.attrs.update(
+            {
+                'placeholder': 'Company contact information',
+            }
+        )      
             
 
     
@@ -155,6 +168,8 @@ class JobEditForm(forms.ModelForm):
             "description",
             "last_date",
             "company_name",
+            "company_contact_information",
+
             ]
 
     def clean_job_type(self):

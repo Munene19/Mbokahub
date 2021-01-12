@@ -4,7 +4,7 @@
 {% block content %}
 
 <section class="section-hero overlay inner-page bg-image"
-    style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+    style="background-image: url('{% static 'images/hero_3.jpg' %}');" id="home-section">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -87,7 +87,7 @@
                         </tbody>
                     </table>
                     {% else %}
-                    <p>You have not any job yet !! <a href="{% url 'mbokaapp:create-job' %}">Create a new one.</a></p>
+                    <p>You don't have any job yet !! <a href="{% url 'mbokaapp:create-job' %}">Create a new one.</a></p>
                     {% endif %}
                     {% elif user.role == "employee" %}
                     <h5 class="card-header text-center">My Bookmarks Posts</h5>

@@ -5,14 +5,14 @@
 
 <!-- HOME -->
 <section class="home-section section-hero overlay bg-image"
-  style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+  style="background-image: url('{% static 'images/hero_3.jpg' %}');" id="home-section">
 
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-md-12">
         <div class="mb-5 text-center">
-          <h1 class="text-white font-weight-bold">The Easiest Way To Get Your Dream Job</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate est, consequuntur perferendis.</p>
+          <h1 class="text-white font-weight-bold">Let the work find you</h1>
+          <p>Mbokahub is a platform that mainly concentrates on providing employment opportunities to Kenya's blue collar sector while also promising access skilled personell to potential employers.</p>
         </div>
         <form method="GET" action="{% url 'mbokaapp:search_result' %}" class="search-jobs-form">
           {% include 'mbokaapp/search.html' %}
@@ -28,13 +28,12 @@
 </section>
 
 <section class="py-5 bg-image overlay-primary fixed overlay" id="next"
-  style="background-image: url('images/hero_1.jpg');">
+  style="background-image: url('images/hero_3.jpg');">
   <div class="container">
     <div class="row mb-5 justify-content-center">
       <div class="col-md-7 text-center">
-        <h2 class="section-title mb-2 text-white">DJobPortal Stats</h2>
-        <p class="lead text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita unde officiis
-          recusandae sequi excepturi corrupti.</p>
+        <h2 class="section-title mb-2 text-white">Mbokahub Stats</h2>
+        <p class="lead text-white"></p>
       </div>
     </div>
     <div class="row pb-0 block__19738 section-counter">
@@ -55,7 +54,7 @@
 
       <div class="col-6 col-md-6 col-lg-3 mb-5 mb-lg-0">
         <div class="d-flex align-items-center justify-content-center mb-2">
-          <strong class="number" data-number="20">0</strong>
+          <strong class="number" data-number="0">0</strong>
         </div>
         <span class="caption">Jobs Filled</span>
       </div>
@@ -128,13 +127,12 @@
   {% endif %}
 </section>
 
-<section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+<section class="py-5 bg-image overlay-primary fixed overlay" id="signbar">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-8">
         <h2 class="text-white">Looking For A Job?</h2>
-        <p class="mb-0 text-white lead">Lorem ipsum dolor sit amet consectetur adipisicing elit tempora adipisci
-          impedit.</p>
+        <p class="mb-0 text-white lead">Join mbokahub today and let us help you build your blue-collar career.</p>
       </div>
       <div class="col-md-3 ml-auto">
         <a href="{% url 'account:employee-registration' %}" class="btn btn-warning btn-block btn-lg">Sign Up</a>
