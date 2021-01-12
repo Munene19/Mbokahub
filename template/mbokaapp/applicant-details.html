@@ -26,21 +26,15 @@
                 <div class="border p-4 rounded">
                   <ul class="list-unstyled block__47528 mb-0">
                     <li><span class="active">Area of specialization</span></li>
-                    <h3>{{ applicant.area_of_specialization }}</h3>
+                    <p>{{ applicant.area_of_specialization }}</p>
               
                   </ul>
-                </div>
-                <div class="border p-4 rounded">
-                  <ul class="list-unstyled block__47528 mb-0">
-                    <li><span class="active">Reviews</span></li>
-                    <h3>{{ applicant.area_of_specialization }}</h3>
-              
-                  </ul>
-                </div>
+                </div>                
               </div>
           <div class="col-lg-8">
             <span class="text-primary d-block mb-5"><span class="icon-magnet display-1"></span></span>
             <p><h3>Applicant name :</h3>{{ applicant.get_full_name }}</p>
+            <p><h3>Email :</h3>{{ applicant.bio }}</p>
             <p><h3>Email :</h3>{{ applicant.email }}</p>
             <p><h3>Gender :</h3>
                 {% if applicant.gender == 'M' %}

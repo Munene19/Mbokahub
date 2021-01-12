@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from account.managers import CustomUserManager
+from ckeditor.fields import RichTextField
+
 from PIL import Image
 
 
@@ -26,7 +28,7 @@ class User(AbstractUser):
     role = models.CharField(choices=ROLE,  max_length=10)
     gender = models.CharField(choices=JOB_TYPE, max_length=1)
     area_of_specialization = models.CharField(max_length=300, blank=True)
-    bio = models.CharField(max_length=300, blank=True)
+    bio = RichTextField()
     location = models.CharField(max_length=300, blank=True)
 
 
