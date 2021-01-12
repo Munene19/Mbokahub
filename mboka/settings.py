@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ')jswvy%3t)00(rhk40uap^4qdaiew=2p#c%0b$ve9i0@%2x5al'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['mbokahub.herokuapp.com']
 
