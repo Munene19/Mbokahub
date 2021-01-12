@@ -48,6 +48,9 @@ def job_list_View(request):
     }
     return render(request, 'mbokaapp/job-list.html', context)
 
+def aboutus_view(request):
+    return render(request, 'mbokaapp/about.html')
+
 
 @login_required(login_url=reverse_lazy('account:login'))
 @user_is_employer
