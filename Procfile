@@ -1,0 +1,1 @@
+web: gunicorn mboka.wsgi --log-file -
