@@ -38,15 +38,14 @@ python manage.py collectstatic
 python manage.py runserver
 ```
 ## project Description
-```
  Mbokahub is an application focused at providing employment opportunities to blue-collar professionals in Kenya and widen their scope into the digital world. From labourers to licenced technicians, mbokahub strives to create a safe platform where almost all forms of blue-collar jobs can be found. We at the same time also promise potential employers access to skilled personel for blue-collar proffessions.
 
-```
+
 ## BDD
  
 | Behaviour                 | Input                  | Output                                             |
 | ------------------------  |:----------------------:| --------------------------------------------------:|
-| Load the application      |:----------------------:| Shows landing page with a list of postedjobs|
+| Load the application      | |Shows landing page with a list of postedjobs|
 | Register                  |select account type and register|display the specified account type's register page|
 | Login |Enter account credentials and login|Shows landing page with a list of postedjobs and access to specified user type's dashboard|
 | Post a job(Employer)    |:Enter job details:| Shows list of the user's postedjobs|     
@@ -67,15 +66,15 @@ PostgreSQL
 
 
 ```
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/master/screenshots/landing.png)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/landing.png)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/master/screenshots/employeesignup)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employeesignup)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/master/screenshots/employersignup)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employersignup)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/master/screenshots/jobs)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/jobs)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/master/screenshots/aboutus)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/aboutus)
 
 
 
