@@ -66,15 +66,15 @@ PostgreSQL
 
 
 ```
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/landing.png)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/landing.PNG)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employeesignup)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employeesignup.PNG)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employersignup)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employersignup.PNG)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/jobs)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/jobs.PNG)
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/aboutus)
+![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/aboutus.PNG)
 
 
 
