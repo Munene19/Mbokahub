@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'taggit',
-    'cloudinary',
+    # 'cloudinary',
 
     'mbokaapp.apps.MbokaappConfig',
     'account.apps.AccountConfig',

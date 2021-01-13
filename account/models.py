@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from account.managers import CustomUserManager
 from ckeditor.fields import RichTextField
 from django.db import models
-from cloudinary.models import CloudinaryField
+# from cloudinary.models import CloudinaryField
 
 from PIL import Image
 
