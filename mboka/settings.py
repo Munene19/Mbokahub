@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'taggit',
+    'cloudinary',
 
     'mbokaapp.apps.MbokaappConfig',
     'account.apps.AccountConfig',
@@ -170,6 +174,13 @@ CKEDITOR_CONFIGS = {
 
     }
 }
+
+# cloudinary configuration
+cloudinary.config( 
+  cloud_name = "", 
+  api_key = "", 
+  api_secret = "" 
+)
 
 
 from django.contrib.messages import constants as messages

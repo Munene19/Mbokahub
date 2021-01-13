@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load cloudinary %}
 {% load static %} 
 {% block content %}
 
@@ -22,17 +23,21 @@
     <section class="site-section block__18514" id="next-section">
       <div class="container">
         <div class="row">
-            <div class="col-lg-3 mr-auto">
                 <div class="border p-4 rounded">
                   <ul class="list-unstyled block__47528 mb-0">
-                    <li><span class="active">Area of specialization</span></li>
-                    <p>{{ applicant.area_of_specialization }}</p>
-              
+                    <p>{{ applicant.get_image }}</p>              
                   </ul>
-                </div>                
               </div>
           <div class="col-lg-8">
             <span class="text-primary d-block mb-5"><span class="icon-magnet display-1"></span></span>
+            <div class="border p-4 rounded">
+              <ul class="list-unstyled block__47528 mb-0">
+                <li><span class="active">Area of specialization</span></li>
+                <p>{{ applicant.area_of_specialization }}</p>
+          
+              </ul>
+            </div>
+            
             <p><h3>Applicant name :</h3>{{ applicant.get_full_name }}</p>
             <p><h3>Bio :</h3>{{ applicant.bio }}</p>
             <p><h3>Email :</h3>{{ applicant.email }}</p>
