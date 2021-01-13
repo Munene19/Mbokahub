@@ -176,11 +176,11 @@ CKEDITOR_CONFIGS = {
 }
 
 # cloudinary configuration
-cloudinary.config( 
-  cloud_name = "", 
-  api_key = "", 
-  api_secret = "" 
-)
+# cloudinary.config( 
+#   cloud_name = "", 
+#   api_key = "", 
+#   api_secret = "" 
+# )
 
 
 from django.contrib.messages import constants as messages
