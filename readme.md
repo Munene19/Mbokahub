@@ -43,13 +43,13 @@ python manage.py runserver
 
 ## BDD
  
-| Behaviour                 | Input                  | Output                                             |
-| ------------------------  |:----------------------:| --------------------------------------------------:|
+| Behaviour                 | Input                  | Output                      |
+| ------------------------  |----------------------| --------------------------------------------|
 | Load the application      | |Shows landing page with a list of postedjobs|
 | Register                  |select account type and register|display the specified account type's register page|
 | Login |Enter account credentials and login|Shows landing page with a list of postedjobs and access to specified user type's dashboard|
-| Post a job(Employer)    |:Enter job details:| Shows list of the user's postedjobs|     
-| Apply for job(Employee)    |:navigate to job listings page:| Shows a list of jobs posted by different employers|            
+| Post a job(Employer)    |Enter job details| Shows list of the user's postedjobs|     
+| Apply for job(Employee)    |navigate to job listings page| Shows a list of jobs posted by different employers|            
 | Make job application    |select the desired job post| Shows the specific jobpost page and option to apply|
 | Bookmark job post   |save desired job post| Post is saved to the employee's dashboard|
 
