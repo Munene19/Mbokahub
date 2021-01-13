@@ -66,15 +66,13 @@ PostgreSQL
 
 
 ```
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/landing.PNG)
+## Screenshots
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employeesignup.PNG)
+<img src="screenshots/landing.png" height="px" width="650x">
+<img src="screenshots/employeesignup.png" height="px" width="650x">
+<img src="screenshots/employersignup.png" height="px" width="650x">
+<img src="screenshots/jobs.png" height="px" width="650x">
 
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/employersignup.PNG)
-
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/jobs.PNG)
-
-![Settings Window](https://raw.github.com/Munene19/Mbokahub/screenshots/aboutus.PNG)
 
 
 
