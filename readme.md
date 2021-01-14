@@ -68,10 +68,10 @@ PostgreSQL
 ```
 ## Screenshots
 
-<img src="screenshots/landing.png" height="px" width="650x">
-<img src="screenshots/employeesignup.png" height="px" width="650x">
-<img src="screenshots/employersignup.png" height="px" width="650x">
-<img src="screenshots/jobs.png" height="px" width="650x">
+<img src ="screenshots/landing.png" height="px" width="650x">
+<img src ="screenshots/employeesignup.png" height="px" width="650x">
+<img src ="screenshots/employersignup.png" height="px" width="650x">
+<img src ="screenshots/jobs.png" height="px" width="650x">
 
 
 
