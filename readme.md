@@ -1,5 +1,5 @@
 # Mbokahub
-Mbokahub.  
+Mbokahub is an application focused at providing employment opportunities to blue-collar professionals in Kenya
 
 
 ## Installation
